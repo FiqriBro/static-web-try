@@ -4,49 +4,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#500778" />
   <title>Privacy Policy</title>
-</head>
-<script>
-  const onloadBody = () => {
-    const [bodyEl] = document.getElementsByTagName("body") || [];
-    bodyEl && (bodyEl.onscroll = () => {
-      if (bodyEl.scrollHeight - bodyEl.scrollTop <= bodyEl.clientHeight + 30) {
-        console.log("Sudah mentok di bawah");
-        window.ReactNativeWebView?.postMessage("ContentEndScroll")
-      }
-    })
-    const listTagA = document.getElementsByTagName("a");
-    if (listTagA.length) {
-      for (let i = 0; i < listTagA.length; i++) {
-        if (listTagA[i].href) {
-          listTagA[i].xhref = listTagA[i].href + "";
-          listTagA[i].href = "";
+  <script>
+    const onloadBody = () => {
+      const [bodyEl] = document.getElementsByTagName("body") || [];
+      bodyEl && (bodyEl.onscroll = () => {
+        if (bodyEl.scrollHeight - bodyEl.scrollTop <= bodyEl.clientHeight + 30) {
+          console.log("Sudah mentok di bawah");
+          window.ReactNativeWebView?.postMessage("ContentEndScroll")
         }
-        if (listTagA[i].xhref) {
-          listTagA[i].onclick = () => {
-            window.open(listTagA[i].xhref);
+      })
+      const listTagA = document.getElementsByTagName("a");
+      if (listTagA.length) {
+        for (let i = 0; i < listTagA.length; i++) {
+          if (listTagA[i].href) {
+            listTagA[i].xhref = listTagA[i].href + "";
+            listTagA[i].href = "";
+          }
+          if (listTagA[i].xhref) {
+            listTagA[i].onclick = () => {
+              window.open(listTagA[i].xhref);
+            }
+          }
+          console.log("listTagA", listTagA[i])
+        }
+      }
+      const iniContent = document.getElementsByClassName("ini_content")[0];
+      if (iniContent && iniContent.childNodes) {
+        const { childNodes } = iniContent;
+        for (let i = 0; i < childNodes.length; i++) {
+          const tagBefore = i - 1 ? childNodes[i - 2] : null;
+          const tagNow = childNodes[i];
+          const tagAfter = i - 2 < childNodes.length ? childNodes[i + 2] : null;
+          if (tagBefore?.nodeName == "OL") {
+            tagNow.className = "dalamOl";
           }
         }
-        console.log("listTagA", listTagA[i])
+      }
+      const isShowAgree = (location.search || '').includes('showagree=y')
+      if(isShowAgree) {
+        document.getElementById('persetujuan-anda').style = 'display: block;'
       }
     }
-    const iniContent = document.getElementsByClassName("ini_content")[0];
-    if (iniContent && iniContent.childNodes) {
-      const { childNodes } = iniContent;
-      for (let i = 0; i < childNodes.length; i++) {
-        const tagBefore = i - 1 ? childNodes[i - 2] : null;
-        const tagNow = childNodes[i];
-        const tagAfter = i - 2 < childNodes.length ? childNodes[i + 2] : null;
-        if (tagBefore?.nodeName == "OL") {
-          tagNow.className = "dalamOl";
-        }
-      }
-    }
-    const isShowAgree = (location.search || '').includes('showagree=y')
-    if(isShowAgree) {
-      document.getElementById('persetujuan-anda').style = 'display: block;'
-    }
-  }
-</script>
+  </script>
+</head>
+
 <style>
   @font-face {
     font-family: "ubuntu";
@@ -106,6 +107,7 @@
 </style>
 
 <body onload="onloadBody()">
+  
   <div class="ini_content">
     <div align="center" style="padding-bottom: 32px;">
       <img src="./assets/icons/privacy-policy.svg">
@@ -606,6 +608,7 @@
     </div>
     <p><span>&nbsp;</span></p>
   </div>
+  
 </body>
 
 </html>
