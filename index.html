@@ -46,14 +46,6 @@
       document.getElementById('persetujuan-anda').style = 'display: block;'
     }
   }
-  // Pastikan fungsi dipanggil setelah semua konten dimuat
-  window.addEventListener("load", () => {
-    if (typeof onloadBody === "function") {
-      onloadBody();
-    } else {
-      console.error("onloadBody is not defined");
-    }
-  });
 </script>
 <style>
   @font-face {
