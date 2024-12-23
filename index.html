@@ -6,7 +6,7 @@
   <title>Privacy Policy</title>
 </head>
 <script>
-  window.onloadBody = () => {
+  const onloadBody = () => {
     const [bodyEl] = document.getElementsByTagName("body") || [];
     bodyEl && (bodyEl.onscroll = () => {
       if (bodyEl.scrollHeight - bodyEl.scrollTop <= bodyEl.clientHeight + 30) {
