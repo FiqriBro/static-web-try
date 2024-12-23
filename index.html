@@ -1,0 +1,611 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#500778" />
+  <title>Privacy Policy</title>
+</head>
+<script>
+  window.onloadBody = () => {
+    const [bodyEl] = document.getElementsByTagName("body") || [];
+    bodyEl && (bodyEl.onscroll = () => {
+      if (bodyEl.scrollHeight - bodyEl.scrollTop <= bodyEl.clientHeight + 30) {
+        console.log("Sudah mentok di bawah");
+        window.ReactNativeWebView?.postMessage("ContentEndScroll")
+      }
+    })
+    const listTagA = document.getElementsByTagName("a");
+    if (listTagA.length) {
+      for (let i = 0; i < listTagA.length; i++) {
+        if (listTagA[i].href) {
+          listTagA[i].xhref = listTagA[i].href + "";
+          listTagA[i].href = "";
+        }
+        if (listTagA[i].xhref) {
+          listTagA[i].onclick = () => {
+            window.open(listTagA[i].xhref);
+          }
+        }
+        console.log("listTagA", listTagA[i])
+      }
+    }
+    const iniContent = document.getElementsByClassName("ini_content")[0];
+    if (iniContent && iniContent.childNodes) {
+      const { childNodes } = iniContent;
+      for (let i = 0; i < childNodes.length; i++) {
+        const tagBefore = i - 1 ? childNodes[i - 2] : null;
+        const tagNow = childNodes[i];
+        const tagAfter = i - 2 < childNodes.length ? childNodes[i + 2] : null;
+        if (tagBefore?.nodeName == "OL") {
+          tagNow.className = "dalamOl";
+        }
+      }
+    }
+    const isShowAgree = (location.search || '').includes('showagree=y')
+    if(isShowAgree) {
+      document.getElementById('persetujuan-anda').style = 'display: block;'
+    }
+  }
+</script>
+<style>
+  @font-face {
+    font-family: "ubuntu";
+    src: url("/assets/fonts/Ubuntu.ttf");
+  }
+
+  * {
+    font-family: "ubuntu";
+    margin: 0;
+    padding: 0;
+    font-size: 12px !important;
+  }
+
+  body {
+    height: 100vh;
+    overflow: auto;
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+
+  #persetujuan-anda {
+    display: none;
+  }
+
+  .ini_content {
+    padding: 16px;
+  }
+
+  .jarakPragraf {
+    height: 16px;
+  }
+
+  .jarakPragrafHalf {
+    height: 8px;
+  }
+
+  .ini_table {
+    background-color: #F8F8F9;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .ini_table td {
+    padding-bottom: 8px;
+    vertical-align: top;
+  }
+
+  ol {
+    margin-left: 1.2em;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  p.dalamOl {
+    margin-left: 1.2em;
+  }
+</style>
+
+<body onload="onloadBody()">
+  <div class="ini_content">
+    <div align="center" style="padding-bottom: 32px;">
+      <img src="./assets/icons/privacy-policy.svg">
+    </div>
+    <p><span><strong>Pendahuluan</strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <span>Dengan diterbitkannya Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi
+      ("<strong>UU PDP</strong>"), PT Bank Muamalat Indonesia Tbk ("<strong>Bank Muamalat</strong>") sepenuhnya
+      menyadari
+      bahwa Data Pribadi (privasi) merupakan aset terpenting bagi Anda. Sehingga dalam rangka menjalankan UU PDP serta
+      meningkatkan layanan kepada Anda, khususnya terkait Pelindungan Data Pribadi dalam penggunaan layanan produk
+      dan/atau jasa perbankan syariah, Bank Muamalat berkomitmen untuk melindungi dan menjaga informasi/data tentang
+      orang
+      perseorangan yang teridentifikasi atau dapat diidentifikasi secara tersendiri atau dikombinasi dengan informasi
+      lainnya baik secara langsung maupun tidak langsung melalui sistem elektronik atau non-elektronik sesuai dengan UU
+      PDP dan peraturan perundang-undangan yang berlaku.</span><br><br><span>Adapun komitmen Pelindungan Data
+      Pribadi (privasi) diatur dan ditetapkan oleh Bank Muamalat melalui Kebijakan Privasi ini. Kebijakan Privasi ini
+      dijadikan standar dalam melakukan pemrosesan Data Pribadi Anda dengan tetap memperhatikan prinsip-prinsip
+      pemrosesan
+      Data Pribadi sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.</span>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Ruang Lingkup Data Pribadi</strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Data Pribadi adalah data tentang orang perseorangan yang teridentifikasi atau dapat diidentifikasi secara
+        tersendiri atau dikombinasi dengan informasi lainnya baik secara langsung maupun tidak langsung melalui sistem
+        elektronik atau nonelektronik. Data Pribadi yang dikumpulkan oleh Bank Muamalat sehubungan dengan penyediaan
+        produk dan jasa/layanan, meliputi Data Pribadi yang bersifat spesifik atau Data Pribadi yang bersifat
+        Umum.</span></p>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span>1. Data Pribadi yang bersifat spesifik</span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Data Pribadi yang bersifat spesifik, antara lain:</span></p>
+    <table class="ini_table">
+      <tbody>
+        <tr>
+          <td><span>a.</span></td>
+          <td><span>Data Biometrik yang memungkinkan identifikasi unik terhadap individu seperti gambar
+              wajah, sidik jari dan rekaman suara;</span></td>
+        </tr>
+        <tr>
+          <td><span>b.</span></td>
+          <td><span>Data Keuangan Pribadi, seperti data tabungan, deposito, giro dan pembiayaan;</span></td>
+        </tr>
+        <tr>
+          <td><span>c.</span></td>
+          <td><span>Data Anak, seperti yang ada pada pembukaan rekening anak;</span></td>
+        </tr>
+        <tr>
+          <td><span>d.</span></td>
+          <td><span>Data Lainnya sesuai dengan ketentuan peraturan perundang-undangan.</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div><span>2. Data Pribadi yang bersifat umum</span></div>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Data Pribadi yang bersifat umum, antara lain:</span></p>
+    <table class="ini_table">
+      <tbody>
+        <tr>
+          <td><span>a.</span></td>
+          <td><span>Nama Lengkap;</span></td>
+        </tr>
+        <tr>
+          <td><span>b.</span></td>
+          <td><span>Jenis Kelamin;</span></td>
+        </tr>
+        <tr>
+          <td><span>c.</span></td>
+          <td><span>Kewarganegaraan;</span></td>
+        </tr>
+        <tr>
+          <td><span>d.</span></td>
+          <td><span>Agama;</span></td>
+        </tr>
+        <tr>
+          <td><span>e.</span></td>
+          <td><span>Status Pernikahan;</span></td>
+        </tr>
+        <tr>
+          <td><span>f.</span></td>
+          <td><span>Alamat;</span></td>
+        </tr>
+        <tr>
+          <td><span>g.</span></td>
+          <td><span>Tempat dan tanggal lahir;</span></td>
+        </tr>
+        <tr>
+          <td><span>h.</span></td>
+          <td><span>Nama Gadis Ibu Kandung;</span></td>
+        </tr>
+        <tr>
+          <td><span>i.</span></td>
+          <td><span>Pekerjaan;</span></td>
+        </tr>
+        <tr>
+          <td><span>j.</span></td>
+          <td><span>Data Pribadi yang dikombinasikan untuk mengidentifikasi seseorang, antara lain nomor
+              <em>handphone</em> dan <em>IP Address.</em></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Legalitas Pemrosesan</strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Pemrosesan Data Pribadi yang dilakukan sepanjang Bank Muamalat telah memenuhi satu atau beberapa dasar
+        pemrosesan sebagai berikut:</span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <ol>
+      <li><span>Bank Muamalat telah memperoleh persetujuan yang sah secara eksplisit dari Anda untuk melakukan 1 (satu)
+          atau beberapa tujuan tertentu yang telah disampaikan oleh Bank Muamalat kepada Anda;</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+      <li><span>Bank Muamalat menjalankan Hak dan Kewajibannya berdasarkan perjanjian dengan Anda;</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+      <li><span>Bank Muamalat perlu melaksanakan kewenangan atau memenuhi kewajiban berdasarkan peraturan
+          perundang-undangan / perintah instansi yang berwenang;</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+      <li><span>Bank Muamalat perlu untuk memenuhi kepentingan vital Anda;</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+      <li><span>Bank Muamalat perlu untuk melaksanakan tugas dalam rangka kepentingan umum dan/atau pelayanan
+          publik;</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+      <li><span>Bank Muamalat perlu memenuhi kepentingan yang sah lainnya, dengan tetap memperhatikan keseimbangan
+          antara kepentingan Bank Muamalat dengan hak-hak Anda.</span></li>
+    </ol>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Tujuan Bank Muamalat Melakukan Pemrosesan Data Pribadi</strong></span></p>
+    <ol>
+      <li><span>Bank Muamalat akan melakukan pemrosesan atas Data Pribadi yang diperoleh maupun dikumpulkan
+          untuk tujuan sebagai berikut:</span>
+        <p class="jarakPragrafHalf">&nbsp;</p>
+        <table class="ini_table">
+          <tbody>
+            <tr>
+              <td><span>a.</span></td>
+              <td><span>Penyediaan layanan produk dan/atau jasa perbankan Bank Muamalat bagi Nasabah;</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span>b.</span></td>
+              <td><span>Menjalankan prinsip <em>Know Your Customer</em> (KYC);</span></td>
+            </tr>
+            <tr>
+              <td><span>c.</span></td>
+              <td><span>Menjalankan Prinsip <em>Customer Due Dilligent</em> (CDD) sesuai dengan ketentuan
+                  yang berlaku;</span></td>
+            </tr>
+            <tr>
+              <td><span>d.</span></td>
+              <td><span>Memberikan personalisasi layanan produk dan/atau jasa perbankan yang Bank Muamalat
+                  sediakan untuk Anda;</span></td>
+            </tr>
+            <tr>
+              <td><span>e.</span></td>
+              <td><span>Kepatuhan terhadap ketentuan hukum yang berlaku termasuk namun tidak terbatas pada
+                  Anti Pencucian Uang, Pencegahan Pendanaan Terorisme, dan Pencegahan Pendanaan Proliferasi Senjata
+                  Pemusnah Massal (APU - PPT dan PPPSPM);</span></td>
+            </tr>
+            <tr>
+              <td><span>f.</span></td>
+              <td><span>Menyelesaikan setiap permasalahan terkait akses Anda terhadap layanan produk
+                  dan/atau jasa perbankan Bank Muamalat;</span></td>
+            </tr>
+            <tr>
+              <td><span>g.</span></td>
+              <td><span>Menindaklanjuti setiap keluhan atas layanan produk dan/atau jasa perbankan Bank
+                  Muamalat atau pihak lain yang bekerja sama dengan Bank Muamalat;</span></td>
+            </tr>
+            <tr>
+              <td><span>h.</span></td>
+              <td><span>Evaluasi, peningkatan, dan/atau pembaruan fitur layanan produk dan/atau jasa
+                  perbankan Bank Muamalat;</span></td>
+            </tr>
+            <tr>
+              <td><span>i.</span></td>
+              <td><span>Penawaran iklan/promosi maupun pemasaran atas layanan produk dan/atau jasa perbankan
+                  Bank Muamalat atau pihak lain yang bekerja sama dengan Bank Muamalat dan penyelenggaraan <em>Loyalty
+                    Program</em> berupa Undian, <em>Gift</em>, dan lainnya;</span></td>
+            </tr>
+            <tr>
+              <td><span>j.</span></td>
+              <td><span>Tujuan-tujuan lainnya selama diizinkan atau diwajibkan oleh ketentuan hukum yang
+                  berlaku.</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="jarakPragraf">&nbsp;</p>
+      </li>
+      <li><span>Kami dapat merekam dan menelusuri interaksi Anda dengan Bank Muamalat, termasuk melalui
+          aplikasi, situs web, panggilan telepon, surat elektronik dan non elektronik, dalam suatu pertemuan langsung,
+          dan/atau jenis atau media komunikasi lain. Bank Muamalat dapat menggunakan catatan ini untuk memeriksa
+          instruksi
+          Anda kepada kami, menilai, menganalisis, dan meningkatkan layanan kami, melatih Karyawan Bank Muamalat,
+          mengelola risiko atau untuk tujuan lain.</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+
+      <li><span>Bank Muamalat dapat mengumpulkan foto, video, atau rekaman suara Anda, melalui kamera
+          pengawas/<em>Closed Circuit Television</em> (CCTV) termasuk namun tidak terbatas di dalam dan di sekitar
+          kantor
+          kami, maupun di sekitar mesin ATM kami untuk tujuan keamanan.</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+
+      <li><span>Bank Muamalat menggunakan <em>"cookies"</em> atau fitur lainnya dari waktu ke waktu agar
+          memudahkan Bank Muamalat atau pihak ketiga untuk mengumpulkan informasi pengguna situs web Bank Muamalat,
+          seperti menyimpan preferensi pengguna dan merekam informasi sesi atau berbagai informasi lain yang akan
+          membantu
+          Bank Muamalat memberikan layanan lebih personal kepada Anda.<em>"Cookies"</em> adalah berkas file (teks)
+          berukuran kecil yang dapat dikirimkan situs web ke browser Anda yang menyimpan informasi tertentu pada sistem
+          Anda. Anda dapat menyesuaikan pengaturan pada browser Anda sehingga Anda akan mendapatkan pemberitahuan ketika
+          Anda menerima <em>"cookies"</em>. Anda dapat setiap saat menonaktifkan<em>"cookies"</em> dengan mengubah
+          peraturan pada browser Anda. Namun dengan menonaktifkan <em>"cookies"</em>, Anda mungkin tidak dapat
+          menggunakan
+          fungsi-fungsi tertentu atau mengakses bagian-bagian tertentu dari situs website kami.</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+
+      <li><span>Bank Muamalat menggunakan Data Pribadi Anda untuk mempersonalisasikan pemasaran produk dan
+          layanan Bank Muamalat kepada Anda, sehingga Anda akan diberitahukan mengenai acara serta penawaran promosi
+          produk dan layanan yang mungkin menarik bagi Anda. Anda dapat memberitahukan kepada Bank Muamalat setiap saat
+          apabila Anda tidak ingin menerima informasi pemasaran tersebut melalui kantor layanan Bank Muamalat yang
+          terdekat.</span></li>
+      <p class="jarakPragraf">&nbsp;</p>
+
+    </ol>
+
+    <!-- New Sect : Pengendalian dan Transfer Data Pribadi -->
+    <p><span><strong>Pengendalian dan Transfer Data Pribadi</strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Dalam memproses Data Pribadi Anda, Bank Muamalat dapat melibatkan pihak ketiga sebagai Pengendali Data
+        Pribadi bersama dan/atau Prosesor Data Pribadi dalam rangka melaksanakan pemrosesan Data Pribadi Anda baik di
+        dalam dan/atau di luar Indonesia. Dalam hal demikian, Bank Muamalat akan melakukan pelindungan atas Data Pribadi
+        Anda sesuai dengan peraturan perundang-undangan.<br><br>
+        Jika Bank Muamalat melakukan transfer Data Pribadi Anda ke luar Indonesia, Bank Muamalat wajib memastikan sesuai
+        peraturan perundang-undangan bahwa negara tujuan transfer telah memiliki tingkat Pelindungan Data Pribadi yang
+        setara (atau lebih tinggi) dibandingkan Pelindungan Data Pribadi di Indonesia.<br><br>
+        Dalam hal negara tujuan transfer Data Pribadi tidak memiliki tingkat pelindungan yang setara (atau lebih
+        tinggi), maka Bank Muamalat selaku Pengendali Data Pribadi wajib memastikan terdapat Pelindungan Data Pribadi
+        yang memadai dan bersifat mengikat sebagaimana yang diatur pada peraturan perundang-undangan.</span></p>
+    <p class="jarakPragraf">&nbsp;</p>
+
+    <!-- New Sect : Bagaimana Bank Muamalat -->
+    <p><span><strong>Bagaimana Bank Muamalat memperoleh dan mengumpulkan Data Pribadi? </strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Bank Muamalat memperoleh dan mengumpulkan Data Pribadi melalui berbagai sarana dan aktivitas
+        antara lain:</span></p>
+    <ol style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Formulir Aplikasi, Mobile Banking Muamalat (Muamalat DIN), dan Website</span>
+      </li>
+    </ol>
+    <p><span>Bank Muamalat memperoleh dan mengumpulkan Data Pribadi dari perangkat yang Anda gunakan pada
+        saat mengakses website atau Aplikasi Mobile Banking Muamalat (Muamalat DIN) dan dari permohonan layanan yang
+        Anda
+        ajukan dengan mengisi Formulir Pembukaan Rekening, Formulir Aplikasi Pembiayaan, melengkapi data permohonan
+        melalui website atau Aplikasi Mobile Banking (Muamalat DIN) dan media lainnya yang disediakan oleh Bank Muamalat
+        maupun pihak yang bekerja sama dengan Bank Muamalat.&nbsp;</span></p>
+    <ol start="2" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">SalaMuamalat</span></li>
+    </ol>
+    <p><span>Bank Muamalat dapat memperoleh dan mengumpulkan Data Pribadi saat Anda melakukan komunikasi dan
+        interaksi dengan Bank Muamalat, pada saat Anda menghubungi Layanan SalaMuamalat, SALMA via Chat Whatsapp ataupun
+        Website.&nbsp;</span></p>
+    <ol start="3" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Aktivitas Transaksi</span></li>
+    </ol>
+    <p><span>Bank Muamalat mengumpulkan informasi atas transaksi Anda pada saat Anda melakukan transaksi
+        perbankan baik secara langsung melalui kantor layanan Bank Muamalat maupun melalui Mobile Banking Muamalat
+        (Muamalat DIN) atau Internet Banking Muamalat.</span></p>
+    <ol start="4" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Bank Muamalat dapat memperoleh dan mengumupulkan Data Pribadi Anda melalui
+          Website dan
+          Platform Media Sosial resmi Bank yang Anda akses, seperti:&nbsp;</span>
+        <p class="jarakPragrafHalf">&nbsp;</p>
+
+        <table class="ini_table">
+          <tbody>
+            <tr>
+              <td><span>a.</span></td>
+              <td><span>Facebook : Bank Muamalat</span></td>
+            </tr>
+            <tr>
+              <td><span>b.</span></td>
+              <td><span>Twitter/ X : @BankMuamalat</span></td>
+            </tr>
+            <tr>
+              <td><span>c.</span></td>
+              <td><span>Instagram : @bank.muamalat</span></td>
+            </tr>
+            <tr>
+              <td><span>d.</span></td>
+              <td><span>Youtube : Bank Muamalat</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="jarakPragrafHalf">&nbsp;</p>
+
+      </li>
+      <li><span style="font-weight: 600;">Lokasi Fisik</span></li>
+    </ol>
+    <p><span>Bank Muamalat dapat memperoleh dan mengumpulkan Data Pribadi Anda baik secara langsung maupun
+        tidak langsung pada saat Anda mengunjungi kantor Pusat, Kantor Layanan, atau Pameran dan event yang diadakan
+        oleh
+        Bank Muamalat.</span></p>
+    <ol start="6" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Afiliasi dan Pihak Ketiga</span></li>
+    </ol>
+    <p><span>Bank Muamalat dapat memperoleh dan mengumpulkan Data Pribadi Anda melalui pihak-pihak yang
+        bekerja sama dengan Bank Muamalat.</span></p>
+    <p class="jarakPragraf">&nbsp;</p>
+
+    <!-- New Sect : Pengungkaan Data -->
+    <p><span><strong>Pengungkapan Data Pribadi</strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Bank Muamalat dapat mengungkapkan Data Pribadi Anda kepada pihak yang bekerja sama dengan Bank
+        Muamalat, baik yang berlokasi di Indonesia atau negara lain, untuk melaksanakan tujuan pemrosesan Data Pribadi,
+        antara lain:</span></p>
+    <ol>
+      <li><span>Bank Muamalat dapat membagikan Data Pribadi Anda kepada pihak ketiga yang sudah bekerja sama
+          dengan Bank Muamalat, yang mungkin berlokasi di negara Anda dan/atau negara lain.</span></li>
+      <p class="jarakPragrafHalf">&nbsp;</p>
+
+      <li><span>Bank Muamalat dapat membagikan Data Pribadi Anda kepada pihak ketiga yang diizinkan oleh
+          hukum, yang digunakan dan diungkapkan untuk mematuhi persyaratan dan kewajiban hukum, termasuk untuk penegakan
+          hukum nasional dan internasional, peraturan pemerintahan atau otoritas hukum atau untuk memenuhi kewajiban
+          lain
+          yang harus dipenuhi oleh kami atau penerima Data Pribadi Anda. Hal ini dapat termasuk menggunakan informasi
+          untuk membantu mendeteksi atau mencegah kejahatan, termasuk namun tidak terbatas pada pendanaan terorisme,
+          pencucian uang, dan kejahatan keuangan lainnya, dan untuk keperluan perpajakan.</span></li>
+      <p class="jarakPragrafHalf">&nbsp;</p>
+
+      <li><span>Bank Muamalat dapat mengalihkan atau memindahkan Data Pribadi Anda kepada pihak ketiga di
+          negara manapun yang pengungkapannya diwajibkan secara hukum dan/atau dimana diperlukan untuk melindungi,
+          menegakkan, dan mempertahankan hak-hak atau Karyawan dan pejabat Bank Muamalat, dengan tetap tunduk pada
+          peraturan perundang-undangan yang berlaku.</span></li>
+    </ol>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Hak Subjek Data Pribadi </strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Bank Muamalat senantiasa berkomitmen untuk memenuhi Hak Anda sebagai Subjek Data Pribadi untuk
+        mendapatkan informasi mengenai Data Pribadi Anda yang telah dikumpulkan dan diproses oleh Bank Muamalat. Anda
+        dapat meminta kepada Bank Muamalat untuk memperbaiki, melengkapi, memperbarui, atau menghapus Data Pribadi Anda
+        yang berada di bawah kendali Bank Muamalat dengan tetap memperhatikan ketentuan hukum yang berlaku. Namun
+        demikian, Bank Muamalat dapat menolak permintaan Anda antara lain apabila jika diperkenankan menurut hukum yang
+        berlaku atau permintaan Anda bertentangan dengan kepentingan hukum yang berlaku.</span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Berikut kami informasikan hak-hak yang Anda miliki sebagai Subjek Data Pribadi:</span></p>
+    <ol style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak atas Informasi dan Akses</span></li>
+    </ol>
+    <p><span>Anda memiliki hak untuk memperoleh informasi mengenai identitas pihak yang meminta Data Pribadi Anda, dasar
+        kepentingan hukum, tujuan permintaannya, serta akses terhadap salinan Data Pribadi Anda. Bank Muamalat akan
+        memberikan akses ke informasi tersebut melalui sarana resmi Bank Muamalat seperti Kantor Layanan Bank Muamalat
+        atau channel (saluran) lainnya, sesuai dengan ketentuan peraturan perundang-undangan dan kebijakan Bank
+        Muamalat.&nbsp;</span></p>
+    <ol start="2" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak atas Perbaikan Data</span></li>
+    </ol>
+    <p><span>Anda memiliki hak untuk melengkapi, memperbarui, dan/atau memperbaiki Data Pribadi yang salah atau tidak
+        akurat.&nbsp;</span></p>
+    <ol start="3" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak untuk mendapatkan, menggunakan dan/atau mengirimkan Data Pribadi ke pihak
+          lain</span></li>
+    </ol>
+    <p><span>Anda memiliki hak untuk memperoleh, memanfaatkan, atau memberikan Data Pribadi Anda yang ada pada Bank
+        Muamalat kepada Pengendali Data Pribadi lainnya, selama sistem komunikasi yang digunakan oleh Bank Muamalat dan
+        pihak ketiga dimaksud aman.&nbsp;</span></p>
+    <ol start="4" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak untuk mengakhiri Pemrosesan, Menghapus dan/atau Memusnahkan Data
+          Pribadi</span></li>
+    </ol>
+    <ol>
+      <p><span>Anda berhak untuk mengakhiri pemrosesan, menghapus dan/atau memusnahkan Data Pribadi Anda. Anda setuju
+          untuk memberikan Bank Muamalat waktu untuk memproses pengakhiran pemrosesan, penghapusan dan/atau pemusnahan
+          Data Pribadi Anda sejauh Bank Muamalat perlukan. Untuk menjalankan hak mengakhiri pemrosesan, penghapusan
+          dan/atau pemusnahan Data Pribadi tersebut, Anda dapat menghubungi Bank Muamalat melalui sarana komunikasi yang
+          tercantum pada Kebijakan Privasi ini.<br><br>
+          Sehubungan dengan hal tersebut, pengakhiran pemrosesan, penghapusan
+          dan/atau pemusnahan Data Pribadi mengakibatkan Anda memberikan hak kepada Bank Muamalat untuk melakukan
+          pemblokiran rekening tabungan Anda, dan/atau menyatakan bahwa utang dan/atau kewajiban Anda kepada Bank
+          Muamalat
+          menjadi jatuh tempo dan dapat ditagih. Segala kerugian yang timbul akibat pelaksanaan hak Anda untuk
+          mengakhiri
+          pemrosesan, penghapusan dan/atau pemusnahan Data Pribadi merupakan tanggung jawab Anda.<br><br>
+          Kewajiban Bank Muamalat
+          untuk menghapus atau memusnahkan Data Pribadi Anda dikecualikan untuk:&nbsp;</span></p>
+      <ol>
+        <li><span>Bank Muamalat dapat membagikan Data Pribadi Anda kepada pihak ketiga yang sudah bekerja sama
+            dengan Bank Muamalat, yang mungkin berlokasi di negara Anda dan/atau negara lain.</span></li>
+        <p class="jarakPragrafHalf">&nbsp;</p>
+
+        <li><span>Bank Muamalat dapat membagikan Data Pribadi Anda kepada pihak ketiga yang diizinkan oleh
+            hukum, yang digunakan dan diungkapkan untuk mematuhi persyaratan dan kewajiban hukum, termasuk untuk
+            penegakan
+            hukum nasional dan internasional, peraturan pemerintahan atau otoritas hukum atau untuk memenuhi kewajiban
+            lain
+            yang harus dipenuhi oleh kami atau penerima Data Pribadi Anda. Hal ini dapat termasuk menggunakan informasi
+            untuk membantu mendeteksi atau mencegah kejahatan, termasuk namun tidak terbatas pada pendanaan terorisme,
+            pencucian uang, dan kejahatan keuangan lainnya, dan untuk keperluan perpajakan.</span></li>
+        <p class="jarakPragrafHalf">&nbsp;</p>
+
+        <li><span>Bank Muamalat dapat mengalihkan atau memindahkan Data Pribadi Anda kepada pihak ketiga di
+            negara manapun yang pengungkapannya diwajibkan secara hukum dan/atau dimana diperlukan untuk melindungi,
+            menegakkan, dan mempertahankan hak-hak atau Karyawan dan pejabat Bank Muamalat, dengan tetap tunduk pada
+            peraturan perundang-undangan yang berlaku.</span></li>
+      </ol>
+    </ol>
+
+    <ol start="5" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak untuk menarik persetujuan</span></li>
+    </ol>
+    <p><span>Anda berhak untuk menarik kembali persetujuan pemrosesan Data Pribadi yang telah Anda berikan kepada Bank
+        Muamalat, dan Anda setuju untuk memberikan Bank Muamalat tambahan waktu untuk memproses pengakhiran pemrosesan
+        Data Pribadi Anda sejauh Bank Muamalat perlukan. Untuk menjalankan hak penarikan persetujuan tersebut, Anda
+        dapat menghubungi Bank Muamalat melalui sarana komunikasi yang tercantum pada Kebijakan Privasi ini.<br><br>
+        Anda perlu memahami bahwa penarikan persetujuan tersebut dapat mempengaruhi kemampuan Bank Muamalat untuk
+        menyediakan produk, layanan dan jasa kepada Anda serta mengelola hubungan kontraktual yang telah dibuat oleh
+        Bank Muamalat dengan Anda ataupun antara Bank Muamalat dengan pihak ketiga lainnya termasuk dapat mengakibatkan
+        terhentinya layanan yang Anda terima dan/atau terjadinya pengakhiran atas satu atau beberapa perjanjian Anda
+        dengan Bank Muamalat dan/atau pelanggaran terhadap satu atau beberapa kewajiban Anda berdasarkan perjanjian
+        dengan Bank Muamalat.<br><br>
+        Sehubungan dengan hal tersebut, penarikan persetujuan pemrosesan Data Pribadi tersebut mengakibatkan Anda
+        memberikan hak kepada Bank Muamalat untuk melakukan pemblokiran rekening tabungan Anda, dan/atau menyatakan
+        bahwa utang dan/atau kewajiban Anda kepada Bank Muamalat menjadi jatuh tempo dan dapat ditagih. Segala kerugian
+        yang timbul akibat pelaksanaan hak Anda untuk menarik persetujuan pemrosesan Data Pribadi merupakan tanggung
+        jawab Anda.&nbsp;</span></p>
+
+    <ol start="6" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak mengajukan keberatan atas Hasil pemrosesan Otomatis</span></li>
+    </ol>
+    <p><span>Anda berhak untuk mengajukan keberatan atas hasil pemrosesan Data Pribadi Anda yang dilakukan secara
+        otomatis yang menimbulkan akibat hukum atau berdampak signifikan terhadap Anda, termasuk pemrofilan dan/atau
+        credit scoring.&nbsp;</span></p>
+
+    <ol start="7" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak untuk Menunda dan Membatasi pemrosesan</span></li>
+    </ol>
+    <p><span>Anda berhak untuk menunda dan membatasi pemrosesan Data Pribadi Anda secara proporsional sesuai dengan
+        tujuan pemrosesan Data Pribadi Anda. Untuk pelaksanaan hak ini, Anda dapat menghubungi Bank Muamalat melalui
+        sarana komunikasi yang tercantum dalam Kebijakan Privasi ini. <br><br>Anda perlu memahami bahwa permintaan
+        penundaan dan pembatasan pemrosesan tersebut dapat mempengaruhi kemampuan
+        Bank Muamalat untuk menyediakan produk, layanan dan jasa kepada Anda, serta hubungan kontraktual yang telah
+        dibuat antara Bank Muamalat dengan Anda ataupun antara Bank Muamalat dengan pihak ketiga lainnya termasuk dapat
+        mengakibatkan terhentinya layanan yang Anda terima dan/atau terjadinya pengakhiran atas satu atau beberapa
+        perjanjian Anda dengan Bank Muamalat dan/atau pelanggaran terhadap satu atau beberapa kewajiban Anda berdasarkan
+        perjanjian Anda dengan Bank Muamalat.&nbsp;</span></p>
+
+    <ol start="8" style="font-weight: 600;">
+      <li><span style="font-weight: 600;">Hak lainnya sesuai perundang-undangan</span></li>
+    </ol>
+    <p><span>Anda berhak mengajukan hak lainnya terkait pemrosesan Data Pribadi sepanjang diatur dalam peraturan
+        perundang-undangan yang berlaku.&nbsp;</span></p>
+
+    <!-- New Sect : Jangka Waktu Pemrosesan dan Penyimpanan Data Pribadi -->
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Jangka Waktu Pemrosesan dan Penyimpanan Data Pribadi</strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Bank Muamalat akan melakukan pemrosesan Data Pribadi sejak Bank Muamalat memperoleh dasar pemrosesan.
+        Pemrosesan akan terus dilakukan oleh Bank Muamalat selama Anda masih menggunakan produk, layanan, dan/atau jasa
+        Bank Muamalat sesuai dengan ketentuan perundang-undangan yang berlaku. <br><br>Bank Muamalat melakukan
+        penyimpanan data sesuai dengan ketentuan retensi penyimpanan data yang
+        ada di Bank Muamalat. Sebagai contoh, Bank Muamalat akan menyimpan Data Pribadi Anda dalam jangka waktu tertentu
+        sejak Anda berinteraksi dengan Bank Muamalat. Bank Muamalat mungkin dapat menyimpan data Anda lebih lama dari
+        batas waktu yang ditentukan jika hal tersebut diperlukan untuk kebutuhan hukum, membantu mendeteksi kejahatan
+        keuangan, menjawab permintaan regulator atau aparat yang berwenang dan hal lainnya. Jika Bank Muamalat tidak
+        membutuhkan lagi informasi terkait Data Pribadi Anda, Bank Muamalat dapat menghapus Data Pribadi Anda sesuai
+        dengan ketentuan yang berlaku di Bank Muamalat.</span></p>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Pengamanan Data Pribadi </strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Bank Muamalat menggunakan berbagai cara untuk menjaga Data Pribadi Anda agar tetap aman dan
+        terlindungi, seperti penggunaan teknologi Enkripsi dan bentuk keamanan lainnya. Disamping itu, Bank Muamalat
+        juga
+        mewajibkan seluruh Karyawan Bank Muamalat dan pihak lain yang bekerja sama dengan Bank Muamalat untuk patuh dan
+        menaati seluruh ketentuan yang berlaku terkait Pelindungan Data Pribadi dan menerapkan langkah-langkah
+        pengamanan
+        dalam melakukan pemrosesan Data Pribadi.</span></p>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Perubahan Kebijakan Privasi </strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Bank Muamalat dapat mengubah, melengkapi dan/atau mengganti kebijakan privasi ini dari waktu ke
+        waktu untuk memastikan Kebijakan Privasi ini sejalan dengan prosedur dan praktik yang dijalankan oleh Bank
+        Muamalat dalam melakukan pemrosesan Data Pribadi. Bank Muamalat akan menyediakan kebijakan privasi terkini
+        melalui
+        website Bank Muamalat di <a href="http://www.bankmuamalat.co.id">www.bankmuamalat.co.id</a>.</span>
+    </p>
+    <p class="jarakPragraf">&nbsp;</p>
+    <p><span><strong>Hubungi Kami </strong></span></p>
+    <p class="jarakPragrafHalf">&nbsp;</p>
+    <p><span>Untuk informasi lebih lanjut Anda dapat menghubungi layanan SalaMuamalat melalui telepon di
+        nomor 1500016 atau email dengan alamat <a
+          href="mailto:salamuamalat@bankmuamalat.co.id">salamuamalat@bankmuamalat.co.id</a>.</span>
+    </p>
+    <p class="jarakPragraf">&nbsp;</p>
+    <div id="persetujuan-anda">
+      <p><span><strong>Persetujuan Anda</strong></span></p>
+      <p class="jarakPragrafHalf">&nbsp;</p>
+      <p><span>Dengan Anda menyetujui kebijakan privasi ini, maka kami dapat melakukan tindakan-tindakan sebagaimana
+          diatur dalam kebijakan Privasi ini.</span>
+      </p>
+    </div>
+    <p><span>&nbsp;</span></p>
+  </div>
+</body>
+
+</html>
